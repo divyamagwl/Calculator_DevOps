@@ -27,8 +27,9 @@ public class Calculator {
 	public static void main(String[] args) {
 		Calculator cal = new Calculator();
 		
-        Scanner sc = new Scanner(System.in);
-                
+        Scanner sc = new Scanner(System.in);                
+        sc.nextLine();
+
         int choice;
 
         do {
