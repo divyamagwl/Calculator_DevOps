@@ -48,7 +48,7 @@ pipeline {
                 sh "docker rmi $registry:latest" 
             }
         }    
-        steps('Curr Directory') {
+        stage('Curr Directory') {
             steps {
                 sh 'ls'
             }
