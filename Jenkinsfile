@@ -48,6 +48,11 @@ pipeline {
                 sh "docker rmi $registry:latest" 
             }
         }    
+        steps('Curr Directory') {
+            steps {
+                sh 'ls'
+            }
+        }
         stage('Ansible pull image') {
             steps {
                 ansiblePlaybook colorized: true, 
