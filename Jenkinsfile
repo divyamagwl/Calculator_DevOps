@@ -27,32 +27,27 @@ pipeline {
                 }
             }
         }
-        // stage('Docker Image Build') {
-        //     steps {
-        //         script {
-        //             dockerImage = docker.build(registry + ":latest")
-        //         }
-        //     }
-        // }
-        // stage('DockerHub Image Push') {
-        //     steps {
-        //         script {
-        //             docker.withRegistry('', registryCredential) {
-        //                 dockerImage.push()
-        //             }
-        //         }
-        //     }
-        // }
-        // stage('Cleaning Up') {
-        //     steps {
-        //         sh "docker rmi $registry:latest" 
-        //     }
-        // }    
-        stage('Curr Directory') {
+        stage('Docker Image Build') {
             steps {
-                sh 'ls'
+                script {
+                    dockerImage = docker.build(registry + ":latest")
+                }
             }
         }
+        stage('DockerHub Image Push') {
+            steps {
+                script {
+                    docker.withRegistry('', registryCredential) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+        stage('Cleaning Up') {
+            steps {
+                sh "docker rmi $registry:latest" 
+            }
+        }    
         stage('Ansible pull image') {
             steps {
                 ansiblePlaybook colorized: true,
