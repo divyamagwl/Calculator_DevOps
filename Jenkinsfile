@@ -48,7 +48,7 @@ pipeline {
                 sh "docker rmi $registry:latest" 
             }
         }    
-        stage('Ansible pull image') {
+        stage('Execute Ansible') {
             steps {
                 ansiblePlaybook colorized: true,
                 installation: 'Ansible',
