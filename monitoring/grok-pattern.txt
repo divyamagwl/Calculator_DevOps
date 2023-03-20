@@ -1,0 +1,1 @@
+%{TIMESTAMP_ISO8601:timestamp} \[%{WORD:thread}\] %{LOGLEVEL:log.level} .*? - \[%{WORD:function}\] - %{NUMBER:value1}(\s%{NUMBER:value2})? - \[RESULT\] - %{GREEDYDATA:result}
