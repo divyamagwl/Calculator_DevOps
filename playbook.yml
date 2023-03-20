@@ -1,5 +1,5 @@
 - name: Pull and run docker image
-  hosts: localhost
+  hosts: host_machine
   tasks:
 
     - name: removing old containers
