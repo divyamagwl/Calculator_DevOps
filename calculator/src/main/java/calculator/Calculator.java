@@ -105,50 +105,41 @@ public class Calculator {
 
 	public double mySqrt(double num) {
         if(num < 0) {
-            logger.info("[SQUARE ROOT] [FAILED] " + num);
-            logger.info("[RESULT - SQUARE ROOT] [INVALID INPUT] -1");
+            logger.error("[SQUARE_ROOT] - " + num + " - [RESULT] - " + "null");
             return -1;
         }
 
         double ans = Math.sqrt(num);
 
-        logger.info("[SQUARE ROOT] [SUCCESS] " + num);
-        logger.info("[RESULT - SQUARE ROOT] " + ans);
-
+        logger.info("[SQUARE_ROOT] - " + num + " - [RESULT] - " + ans);
         return ans;
 	}
 
 	public double myFactorial(double num) {
         if(num < 0) {
-            logger.info("[FACTORIAL] [FAILED] " + num);
-            logger.info("[RESULT - FACTORIAL] [INVALID INPUT] -1");
+            logger.error("[FACTORIAL] - " + num + " - [RESULT] - " + "null");
             return -1;
         }
         
-        if(num == 0) return 1;
-
         double ans = 1;
         for(int i = 1; i <= num; i++) {
             ans *= i;
         }
 
-        logger.info("[FACTORIAL] [SUCCESS] " + num);
-        logger.info("[RESULT - FACTORIAL] " + ans);
+        logger.info("[FACTORIAL] - " + num + " - [RESULT] - " + ans);
 
         return ans;
 	}
 
 	public double myLog(double num) {
         if(num <= 0) {
-            logger.info("[LOGARITHM] [FAILED] -1 " + num);
-            logger.info("[RESULT - LOGARITHM] [INVALID INPUT] -1");
+            logger.error("[LOGARITHM] - " + num + " - [RESULT] - " + "null");
             return -1;
         }
 
         double ans = Math.log(num);
 
-        logger.info("[LOGARITHM] [SUCCESS] " + num);
-        logger.info("[RESULT - LOGARITHM] " + ans);
+        logger.info("[LOGARITHM] - " + num + " - [RESULT] - " + ans);
 
         return ans;
 	}
@@ -156,8 +147,7 @@ public class Calculator {
 	public double myPow(double num1, double num2) {
         double ans = Math.pow(num1, num2);
 
-        logger.info("[POWER] [SUCCESS] " + num1 + " " + num2);
-        logger.info("[RESULT - POWER] " + ans);
+        logger.info("[POWER] - " + num1 + " " + num2 + " - [RESULT] - " + ans);
 
         return ans;
 	}
