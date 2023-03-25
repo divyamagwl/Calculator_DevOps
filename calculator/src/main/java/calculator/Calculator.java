@@ -88,7 +88,7 @@ public class Calculator {
                     break;
 
                 case 0:
-                    System.out.println("Bye..");
+                    System.out.println("Bye...");
                     break;
 
                 default:
